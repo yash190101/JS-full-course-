@@ -45,15 +45,24 @@ let undefi;
 let noValue = null;
 let bigNumber = 5562254125n
 
+let sym1 = Symbol(123);
+let sym2 = Symbol(123)
 
+// console.log(typeof number);
+// console.log(typeof str);
+// console.log(typeof isTrue);
+// console.log(typeof undefi);
+// console.log(typeof noValue);
+// console.log(typeof bigNumber);
+// console.log(typeof sym1);
+// console.log(typeof sym2);
 
-console.log(typeof number);
-console.log(typeof str);
-console.log(typeof isTrue);
-console.log(typeof undefi);
-console.log(typeof noValue);
-console.log(typeof bigNumber);
+console.log(sym1);
+console.log(sym2);
 
+let check = (sym1 == sym2)
+
+console.log(check);
 
 
 let arr = [10,"yash",true]
@@ -69,6 +78,6 @@ let obj = {
 
 
 
-console.log(typeof arr);
-console.log(typeof myFunction);
-console.log(typeof obj);
+// console.log(typeof arr);
+// console.log(typeof myFunction);
+// console.log(typeof obj);
