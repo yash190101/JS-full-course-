@@ -13,10 +13,8 @@ const books = [
 
 //   const userBooks = books.filter((item) => item.publish > 1995)
 
-  const userBooks = books.filter((item) => {
+const myBooks = books.filter((item) => {
+  return item.genre === "Fiction"
+})
 
-    return item.genre === "Fiction" && item.publish > 1985
-
-  })
-
-  console.log(userBooks);
+  console.log(myBooks);
