@@ -6,6 +6,11 @@
     background-color: #797978;
     padding-left: 30px;
   }
+  .center{
+    width: 50%;
+    margin:auto;
+    
+  }
   #height,
   #weight {
     width: 150px;

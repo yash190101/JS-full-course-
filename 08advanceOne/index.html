@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XmlHttpRequest</title>
+    <style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 200px;
+        
+
+      }
+      
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+      
+    .container {
+        padding: 2px 16px;
+      }
+    </style>
+</head>
+<body style="background-color: #212121;color: bisque;">
+    <h1>Hello From Yash...</h1>
+    <div class="card"></div>
+    <div><button id="one">GET Data</button></div>
+
+<script>
+
+    // const xhr = new XMLHttpRequest();
+    // xhr.open("GET",'https://api.github.com/users/yash190101')
+    // xhr.onreadystatechange = function(){
+    //     console.log(xhr.readyState);    
+    //     if(xhr.readyState === 4){
+    //         const data = xhr.response
+    //         console.log(data);
+    //         console.log(typeof data);
+    //     }
+    // }
+    // xhr.send()
+    
+    
+        const xhr = new XMLHttpRequest()
+        const url = "https://api.github.com/users/yash190101"
+        xhr.open("GET", url)
+        xhr.onreadystatechange = () => {
+            console.log(xhr.readyState)
+            if(xhr.readyState === 4){
+                const data = JSON.parse(xhr.response);
+                console.log(data.avatar_url);
+                document.getElementById("one").addEventListener("click",function(e){
+                document.querySelector(".card").innerHTML = `
+                <img src="${data.avatar_url}" alt="Avatar" style="width:100%">
+                <div class="container">
+                <h4><b>${data.login}</b></h4> 
+                <p>${data.id}</p> ` 
+                e.target.remove()
+                })
+                
+            }
+        }
+        xhr.send()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+<!-- 1) xhr ka object banao xmlHttpResponse() se 
+2) xhr.open call karo with GET as a string aur tumhara api ka url
+3) xhr.readyState se state milta hai jo hota hai 0 se 4 ke bich
+4) xhr.response se api se aya hua response milega jo ki hai string format mai use JSON parse karke object banao
+5) at the end jab tak aap xhr.send nahi karoge tabtak kuch nahi hoga open akela kuch nahi karta
+-->
+
+</html>
+
+
+
